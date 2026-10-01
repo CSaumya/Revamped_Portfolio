@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Basic&family=Instrument+Serif:ital@0;1&family=Playwrite+AR:wght@100..400&family=Roboto+Slab:wght@100..900&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --background: #0b0b08;
+  --foreground: #f8f5e8;
+
+  --surface: #14140f;
+  --surface-hover: #1c1c14;
+
+  --border: #302f20;
+  --border-hover: #4a482c;
+
+  --muted: #a09d82;
+  --muted-foreground: #c5c19e;
+
+  --primary: #f5c518;
+  --primary-hover: #ffd84d;
+
+  --accent: #eab308;
+
+  --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.light {
+  --background: #fbfcdf6f;
+  --foreground: #302b18;
+
+  --surface: #fff3bf;
+  --surface-hover: #ffedaa;
+
+  --border: #eadfae;
+  --border-hover: #d9c978;
+
+  --muted: #82764c;
+  --muted-foreground: #716641;
+
+  --primary: #a98200;
+  --primary-hover: #876900;
+
+  --accent: #b88b00;
+
+  --card-shadow: 0 10px 30px rgba(120, 95, 20, 0.08);
+}
+
+
+@theme {
+  --font-basic: "Basic", sans-serif;
+  --font-roboto: "Roboto Slab", serif;
+  --font-instrument: "Instrument Serif", serif;
+  --font-playwrite: "Playwrite AR", cursive;
+  --font-hindi: "Tiro Devanagari Hindi", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Basic", sans-serif;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
