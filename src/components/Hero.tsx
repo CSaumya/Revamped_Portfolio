@@ -70,7 +70,7 @@ useEffect(() => {
 
   <div className="flex shrink-0 items-center gap-1 whitespace-nowrap text-[10px] text-[var(--muted-foreground)] sm:text-xs">
     <Eye size={13} className="shrink-0" />
-    <span>{visits} visits</span>
+    <span>{visits}</span>
   </div>
 </div>
 
