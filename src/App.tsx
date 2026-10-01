@@ -1,5 +1,5 @@
-
 import { useEffect, useState } from "react"
+import { Analytics } from "@vercel/analytics/react";
 import { AnimatePresence, motion } from "motion/react"
 import { Routes, Route } from "react-router-dom"
 
@@ -125,6 +125,7 @@ const [darkMode, setDarkMode] = useState(() => {
           </motion.div>
         )}
       </AnimatePresence>
+      <Analytics />
     </>
   )
 }

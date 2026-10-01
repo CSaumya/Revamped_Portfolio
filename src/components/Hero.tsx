@@ -1,4 +1,4 @@
-
+import { Eye } from "lucide-react"
 import Dark from '../assets/dark_bg.png'
 import Light from '../assets/light_bg.jpg'
 import Me from '../assets/Me.png'
@@ -26,7 +26,23 @@ const Hero = ({ darkMode }: Props) => {
 
     return () => clearInterval(interval)
   }, [])
+const [visits, setVisits] = useState(0)
 
+useEffect(() => {
+  const hasVisited = localStorage.getItem("portfolio-visited")
+  const totalVisits = Number(localStorage.getItem("portfolio-visits") || 0)
+
+  if (!hasVisited) {
+    const updatedVisits = totalVisits + 1
+
+    localStorage.setItem("portfolio-visits", String(updatedVisits))
+    localStorage.setItem("portfolio-visited", "true")
+
+    setVisits(updatedVisits)
+  } else {
+    setVisits(totalVisits)
+  }
+}, [])
   return (
     <div className="relative flex w-full flex-col items-center justify-center pt-10">
 
@@ -46,9 +62,17 @@ const Hero = ({ darkMode }: Props) => {
         />
       </div>
 
-      <div className="absolute -bottom-12 left-[calc(8%+105px)] flex flex-col gap-2 font-roboto sm:left-[calc(10%+125px)] md:left-[calc(15%+145px)] lg:left-100">
-        <p className="text-base lg:text-lg sm:text-sm">Saumya Chaudhary</p>
-      </div>
+<div className="absolute -bottom-12 left-[calc(8%+105px)] right-[20%] flex items-center justify-between gap-2 sm:bottom-12 sm:left-[20%] sm:right-[10%] sm:justify-start sm:gap-4 md:-bottom-10 md:left-[calc(15%+145px)] lg:left-100">
+<p className="whitespace-nowrap font-roboto text-xs text-[var(--foreground)] min-[375px]:text-sm sm:text-lg">
+  <span className="sm:hidden">Saumya C.</span>
+  <span className="hidden sm:inline">Saumya Chaudhary</span>
+</p>
+
+  <div className="flex shrink-0 items-center gap-1 whitespace-nowrap text-[10px] text-[var(--muted-foreground)] sm:text-xs">
+    <Eye size={13} className="shrink-0" />
+    <span>{visits} visits</span>
+  </div>
+</div>
 
       <AnimatePresence mode="wait">
         <motion.h2

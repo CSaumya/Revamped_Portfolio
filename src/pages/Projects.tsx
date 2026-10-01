@@ -160,15 +160,27 @@ const Projects = ({ darkMode }: Props) => {
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-1.5 rounded-lg bg-[var(--accent)] px-3.5 py-2 text-[10px] font-medium text-white transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
-                  >
-                    <ExternalLink size={11} />
-                    Live
-                  </a>
+{isInProgress ? (
+  <span
+    aria-disabled="true"
+    title="Under construction"
+    className="inline-flex cursor-not-allowed items-center justify-center gap-1.5 rounded-lg bg-[var(--accent)] px-3.5 py-2 text-[10px] font-medium text-white/60 opacity-60"
+  >
+    <ExternalLink size={11} />
+    Live
+  </span>
+) : (
+  <a
+    href={project.live}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center justify-center gap-1.5 rounded-lg bg-[var(--accent)] px-3.5 py-2 text-[10px] font-medium text-white transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+  >
+    <ExternalLink size={11} />
+    Live
+  </a>
+)}
+
 
                   <a
                     href={project.repo}
