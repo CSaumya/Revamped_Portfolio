@@ -1,4 +1,3 @@
-import React from "react";
 import { ExternalLink } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 
@@ -95,7 +94,7 @@ const Projects = ({ darkMode }: Props) => {
       </div>
 
       <div className="mx-auto grid w-full max-w-3xl grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
-        {projects.map((project, index) => {
+        {projects.map((project) => {
           const isInProgress = project.status === "In Progress";
 
           return (
