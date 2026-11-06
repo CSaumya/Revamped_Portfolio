@@ -1,4 +1,3 @@
-import { Eye } from "lucide-react"
 import Dark from '../assets/dark_bg.png'
 import Light from '../assets/light_bg.jpg'
 import Me from '../assets/Me.png'
@@ -26,23 +25,7 @@ const Hero = ({ darkMode }: Props) => {
 
     return () => clearInterval(interval)
   }, [])
-const [visits, setVisits] = useState(0)
 
-useEffect(() => {
-  const hasVisited = localStorage.getItem("portfolio-visited")
-  const totalVisits = Number(localStorage.getItem("portfolio-visits") || 0)
-
-  if (!hasVisited) {
-    const updatedVisits = totalVisits + 1
-
-    localStorage.setItem("portfolio-visits", String(updatedVisits))
-    localStorage.setItem("portfolio-visited", "true")
-
-    setVisits(updatedVisits)
-  } else {
-    setVisits(totalVisits)
-  }
-}, [])
   return (
     <div className="relative flex w-full flex-col items-center justify-center pt-10">
 
