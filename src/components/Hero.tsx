@@ -67,11 +67,6 @@ useEffect(() => {
   <span className="sm:hidden">Saumya C.</span>
   <span className="hidden sm:inline">Saumya Chaudhary</span>
 </p>
-
-  {/* <div className="flex shrink-0 items-center gap-1 whitespace-nowrap text-[10px] text-[var(--muted-foreground)] sm:text-xs">
-    <Eye size={13} className="shrink-0" />
-    <span>{visits}</span>
-  </div> */}
 </div>
 
       <AnimatePresence mode="wait">
